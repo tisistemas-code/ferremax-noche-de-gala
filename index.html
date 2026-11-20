@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FERREMAX: una sola fuerza · Noche de Gala</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--bg2:#121110;--card:#17150f;--gold:#d2693f;--gold2:#eda383;--text:#f5f1e6;--muted:#b9b09a;--line:rgba(210,105,63,.3);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem;line-height:1.6}
+h1,h2,h3,.cinzel{font-family:"Cinzel",Georgia,serif;font-weight:500;letter-spacing:.06em}
+section{padding:5rem 1.25rem;max-width:1050px;margin:0 auto}
+.title{text-align:center;font-size:clamp(1.6rem,5vw,2.4rem);color:var(--gold2);margin:0 0 .5rem}
+.title::after{content:"";display:block;width:70px;height:1px;background:var(--gold);margin:1rem auto 2.5rem}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:center;gap:1.4rem;padding:calc(.8rem + env(safe-area-inset-top,0px)) 1rem .8rem;background:rgba(10,10,10,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);overflow-x:auto}
+nav a{color:var(--muted);text-decoration:none;font-family:"Cinzel",serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap}
+nav a:hover{color:var(--gold)}
+.hero{position:relative;overflow:hidden;min-height:100vh;max-width:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:7rem;background:radial-gradient(ellipse at 50% 30%,rgba(210,105,63,.18),transparent 60%),var(--bg)}
+.badge{border:1px solid var(--gold);color:var(--gold);padding:.45rem 1.4rem;border-radius:99px;font-family:"Cinzel",serif;font-size:.8rem;letter-spacing:.25em;text-transform:uppercase;animation:fade 1.2s both}
+.hero h1{font-size:clamp(2.6rem,11vw,6rem);line-height:1.05;margin:1.5rem 0 .5rem;background:linear-gradient(120deg,#8f3f20,var(--gold2),var(--gold),#f8d9c8,var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fade 1.4s .2s both,shine 6s linear infinite}
+.hero h1 small{display:block;font-size:.45em;letter-spacing:.2em;text-transform:lowercase;font-style:italic;font-family:"Cormorant Garamond",serif}
+.sub{color:var(--muted);letter-spacing:.2em;text-transform:uppercase;font-size:.95rem;animation:fade 1.4s .5s both}
+.cta{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2.5rem;animation:fade 1.4s .8s both}
+.btn{display:inline-block;padding:.95rem 2.1rem;border-radius:2px;font-family:"Cinzel",serif;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.3s;border:1px solid var(--gold)}
+.btn-gold{background:linear-gradient(135deg,#c8643c,var(--gold2));color:#111;font-weight:700}
+.btn-gold:hover{box-shadow:0 0 25px rgba(210,105,63,.5);transform:translateY(-2px)}
+.btn-line{background:transparent;color:var(--gold)}
+.btn-line:hover{background:rgba(210,105,63,.12)}
+.welcome{text-align:center;max-width:760px}
+.welcome p{font-style:italic;font-size:1.45rem;color:var(--text)}
+.welcome .orn{color:var(--gold);font-size:1.6rem;letter-spacing:.5em}
+.grid{display:grid;gap:1.25rem;grid-template-columns:1fr}
+.card{background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--line);padding:2rem 1.5rem;text-align:center;transition:.35s}
+.card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 10px 35px rgba(210,105,63,.12)}
+.card .ico{font-size:2rem;margin-bottom:.6rem}
+.card h3{color:var(--gold);font-size:1.05rem;margin:0 0 .8rem;text-transform:uppercase}
+.card p{margin:.2rem 0;color:var(--muted)}
+.card strong{color:var(--text)}
+.card .btn{margin-top:1rem;padding:.7rem 1.3rem;font-size:.75rem}
+.timeline{position:relative;margin-left:.6rem;padding-left:1.8rem;border-left:1px solid var(--gold)}
+.tl{position:relative;margin-bottom:2rem}
+.tl::before{content:"";position:absolute;left:calc(-1.8rem - 6px);top:.55rem;width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+.tl time{font-family:"Cinzel",serif;color:var(--gold);font-size:.85rem;letter-spacing:.12em}
+.tl h3{margin:.2rem 0;font-size:1.15rem;color:var(--text)}
+.tl p{margin:0;color:var(--muted)}
+.awards{background:radial-gradient(ellipse at center,rgba(210,105,63,.1),transparent 70%)}
+.award{border:1px solid var(--gold);padding:2.2rem 1.5rem;text-align:center;position:relative}
+.award::before{content:"";position:absolute;inset:6px;border:1px solid var(--line);pointer-events:none}
+.award .n{font-size:2.4rem;color:var(--gold)}
+.award h3{color:var(--gold2);margin:.4rem 0}
+.award p{color:var(--muted);margin:.3rem 0}
+.award em{color:var(--gold);font-size:.95rem}
+.rsvp{text-align:center;max-width:620px}
+form{display:grid;gap:1rem;margin-top:1.5rem;text-align:left}
+input,select{width:100%;padding:.9rem 1rem;background:#0f0e0b;border:1px solid var(--line);color:var(--text);font:inherit;border-radius:2px}
+input:focus,select:focus{outline:none;border-color:var(--gold)}
+.wa{background:linear-gradient(135deg,#1f8a4c,#25d366);color:#fff;border-color:#25d366;width:100%;text-align:center}
+.wa:hover{box-shadow:0 0 25px rgba(37,211,102,.4)}
+footer{text-align:center;padding:3rem 1rem 4rem;border-top:1px solid var(--line);color:var(--muted);font-family:"Cinzel",serif;letter-spacing:.2em;font-size:.85rem}
+footer b{color:var(--gold)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes shine{to{background-position:200% center}}
+@media(min-width:700px){.grid.c2{grid-template-columns:repeat(2,1fr)}.grid.c3{grid-template-columns:repeat(3,1fr)}nav{gap:2.2rem}section{padding:6rem 2rem}}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:30}
+#fx{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero>*:not(canvas){position:relative;z-index:1}
+.count{display:flex;gap:.8rem;justify-content:center;margin-top:2.8rem;animation:fade 1.4s 1.1s both}
+.count div{min-width:64px;padding:.7rem .4rem;border:1px solid var(--line);background:rgba(10,10,10,.6);backdrop-filter:blur(4px)}
+.count b{display:block;font-family:"Cinzel",serif;font-size:1.6rem;color:var(--gold2);font-weight:700}
+.count span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:3rem}
+.stats b{display:block;font-family:"Cinzel",serif;font-size:2.6rem;color:var(--gold);line-height:1}
+.stats span{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.card,.award{transform-style:preserve-3d;will-change:transform}
+.badge{animation:fade 1.2s both,glow 3s 1.5s ease-in-out infinite}
+.tl{transition:padding-left .4s}.tl:hover{padding-left:.6rem}.tl:hover h3{color:var(--gold2)}
+.tl.in::before{animation:pulse 2.6s infinite}
+nav a.on{color:var(--gold);border-bottom:1px solid var(--gold)}
+.ico{display:inline-block;animation:float 3.5s ease-in-out infinite}
+.btn-gold{background-size:200% auto}
+@keyframes glow{50%{box-shadow:0 0 22px rgba(210,105,63,.45)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(210,105,63,.6)}70%,100%{box-shadow:0 0 0 12px rgba(210,105,63,0)}}
+@keyframes float{50%{transform:translateY(-6px)}}
+@media(min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}.count div{min-width:90px}.count b{font-size:2.2rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav><a href="#inicio">Inicio</a><a href="#datos">Detalles</a><a href="#cronograma">Cronograma</a><a href="#premios">Premios</a><a href="#rsvp">RSVP</a></nav>
+
+<header class="hero" id="inicio">
+  <canvas id="fx"></canvas>
+  <span class="badge">Noche de Gala · 8.° Aniversario</span>
+  <h1>FERREMAX<small>una sola fuerza</small></h1>
+  <p class="sub">19:00 hrs · 03:00 a.m. · 50 invitados</p>
+  <div class="cta">
+    <a class="btn btn-gold" href="#rsvp">Confirmar Asistencia</a>
+    <a class="btn btn-line" href="#cronograma">Ver Cronograma</a>
+  </div>
+  <div class="count" id="count"><div><b id="d">00</b><span>Días</span></div><div><b id="h">00</b><span>Horas</span></div><div><b id="m">00</b><span>Min</span></div><div><b id="s">00</b><span>Seg</span></div></div>
+</header>
+
+<section class="welcome reveal">
+  <div class="orn">✦ ✦ ✦</div>
+  <p>Querido equipo y aliados, gracias a su dedicación hemos alcanzado un hito muy especial. Queremos rendir homenaje al esfuerzo de cada uno en una velada inolvidable llena de reconocimientos, sorpresas y celebración.</p>
+  <div class="stats"><div><b data-n="8">0</b><span>Años</span></div><div><b data-n="50">0</b><span>Invitados</span></div><div><b data-n="4">0</b><span>Mesas</span></div><div><b data-n="3">0</b><span>Premios</span></div></div>
+</section>
+
+<section id="datos">
+  <h2 class="title reveal">Detalles de la Noche</h2>
+  <div class="grid c2">
+    <div class="card reveal"><div class="ico">🕖</div><h3>Fecha y Hora</h3><p><strong>Fecha:</strong> Sábado 28 de noviembre de 2026</p><p><strong>Ingreso:</strong> 19:00 hrs</p><p><strong>Cierre:</strong> 03:00 a.m.</p></div>
+    <div class="card reveal"><div class="ico">📍</div><h3>Ubicación</h3><p><strong>Centro de Convenciones El Gran Salón 1</strong></p><p>Av. Santa Rosa 540, San Juan de Lurigancho</p><a class="btn btn-line" id="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Centro+de+Convenciones+El+Gran+Sal%C3%B3n+1+Av.+Santa+Rosa+540+San+Juan+de+Lurigancho" target="_blank" rel="noopener">Abrir en Google Maps</a></div>
+    <div class="card reveal"><div class="ico">🎩</div><h3>Código de Vestimenta</h3><p><strong>Hombres:</strong> Traje</p><p><strong>Mujeres:</strong> Vestido</p></div>
+    <div class="card reveal"><div class="ico">✨</div><h3>Exclusividad</h3><p>Evento exclusivo para nuestro equipo de <strong>50 colaboradores</strong>.</p></div>
+  </div>
+</section>
+
+<section id="cronograma">
+  <h2 class="title reveal">Cronograma de la Noche</h2>
+  <div class="timeline">
+    <div class="tl reveal"><time>7:00 – 8:00 p. m.</time><h3>Apertura del Festival</h3><p>Recepción en el Punto de Encuentro, entrega de kits, fotografías y Muro de Nuestra Historia con música de bienvenida.</p></div>
+    <div class="tl reveal"><time>8:00 – 8:30 p. m.</time><h3>Inauguración Oficial</h3><p>Ingreso del Maestro de Ceremonias, video institucional y bienvenida oficial.</p></div>
+    <div class="tl reveal"><time>8:30 – 8:50 p. m.</time><h3>Compartimos la Celebración</h3><p>Palabras de Gerencia, fotografía oficial grupal y transición musical.</p></div>
+    <div class="tl reveal"><time>8:50 – 10:00 p. m.</time><h3>Bloque 1: Las Energías Cobran Vida</h3><p>Introducción de la dinámica y retos por mesa en intervalos de 8 minutos.</p></div>
+    <div class="tl reveal"><time>10:00 – 11:00 p. m.</time><h3>Cena de Gala</h3><p>Momento para compartir en mesa con todo el equipo, acompañado de música ambiental.</p></div>
+    <div class="tl reveal"><time>11:00 – 11:35 p. m.</time><h3>Noche de Reconocimientos</h3><p>Gala de premiación en tres categorías con videos testimoniales.</p></div>
+    <div class="tl reveal"><time>11:35 – 11:50 p. m.</time><h3>El Desafío Final</h3><p>Reto colectivo con todas las mesas en pista, pulseras LED, lluvia de confeti dorado y video 360°.</p></div>
+    <div class="tl reveal"><time>11:50 p. m. – 12:00 a. m.</time><h3>Una Misma Fuerza</h3><p>Mensaje de cierre del equipo gerencial, agradecimiento y brindis general.</p></div>
+    <div class="tl reveal"><time>12:00 a. m. en adelante</time><h3>Festival Abierto</h3><p>Barra abierta, DJ en vivo, pista libre y una Hora Loca sorpresa.</p></div>
+  </div>
+</section>
+
+<section class="awards" id="premios">
+  <h2 class="title reveal">Premios FerreMAX</h2>
+  <div class="grid c3">
+    <div class="award reveal"><div class="n">I</div><h3>Maestro del Año</h3><p>Inspira, guía y potencia el desarrollo de los demás.</p><em>Liderazgo · Desarrollo · Inspiración</em></div>
+    <div class="award reveal"><div class="n">II</div><h3>Pieza Clave</h3><p>Conecta áreas, une personas y fortalece el clima laboral.</p><em>Cercanía · Confianza · Colaboración</em></div>
+    <div class="award reveal"><div class="n">III</div><h3>Forjador del Futuro</h3><p>Innova, transforma procesos y construye soluciones de alto impacto.</p><em>Iniciativa · Innovación · Resultados</em></div>
+  </div>
+</section>
+
+<section class="rsvp reveal" id="rsvp">
+  <h2 class="title">Confirma tu Asistencia</h2>
+  <p>Por favor confirma tu lugar para esta noche inolvidable. Los cupos son limitados a 50 invitados.</p>
+  <form id="f">
+    <input id="nom" type="text" placeholder="Tu nombre completo" required>
+    <select id="asis"><option>Sí, asistiré</option><option>No podré asistir</option></select>
+    <button class="btn btn-gold wa" type="submit">Confirmar por WhatsApp</button>
+  </form>
+</section>
+
+<footer>FerreMAX <b>©</b> 8 Años</footer>
+
+<script>
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+/* partículas terracota */
+(()=>{const c=document.getElementById('fx'),x=c.getContext('2d');let W,H,P=[];
+function rs(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;P=Array.from({length:Math.min(70,W/12)},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2+.4,v:Math.random()*.5+.15,a:Math.random()}))}
+rs();addEventListener('resize',rs);
+function f(){x.clearRect(0,0,W,H);P.forEach(p=>{p.y-=p.v;p.a+=.02;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle='rgba(237,163,131,'+(.25+.45*Math.abs(Math.sin(p.a)))+')';x.shadowBlur=8;x.shadowColor='#d2693f';x.fill()});if(!rm)requestAnimationFrame(f)}f()})();
+/* cuenta regresiva */
+const T=new Date('2026-11-28T19:00:00-05:00').getTime(),pad=n=>String(n).padStart(2,'0');
+function tick(){let t=Math.max(0,T-Date.now());const s=Math.floor(t/1000);d.textContent=pad(Math.floor(s/86400));h.textContent=pad(Math.floor(s%86400/3600));m.textContent=pad(Math.floor(s%3600/60));document.getElementById('s').textContent=pad(s%60)}
+tick();setInterval(tick,1000);
+/* barra de progreso, parallax y menú activo */
+const secs=[...document.querySelectorAll('nav a')].map(a=>[a,document.querySelector(a.getAttribute('href'))]);
+addEventListener('scroll',()=>{const y=scrollY,mx=document.documentElement.scrollHeight-innerHeight;document.getElementById('bar').style.width=(y/mx*100)+'%';
+if(!rm&&y<innerHeight){document.querySelector('.hero h1').style.transform='translateY('+y*.15+'px)'}
+secs.forEach(([a,s])=>{const r=s.getBoundingClientRect();a.classList.toggle('on',r.top<innerHeight*.4&&r.bottom>innerHeight*.4)})},{passive:true});
+/* contadores animados */
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);const n=+e.target.dataset.n;let i=0;const st=setInterval(()=>{i++;e.target.textContent=i;if(i>=n)clearInterval(st)},Math.max(30,1200/n))}),{threshold:.6});
+document.querySelectorAll('[data-n]').forEach(b=>co.observe(b));
+/* inclinación 3D en tarjetas */
+if(!rm&&matchMedia('(hover:hover)').matches)document.querySelectorAll('.card,.award').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(700px) rotateY('+px*10+'deg) rotateX('+-py*10+'deg) translateY(-6px)'});c.addEventListener('mouseleave',()=>c.style.transform='')});
+document.querySelectorAll('.grid .reveal,.timeline .reveal').forEach((el,i)=>el.style.transitionDelay=(i%4)*.12+'s');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('f').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=document.getElementById('nom').value.trim(),a=document.getElementById('asis').value;
+  const t='Hola, soy '+n+'. '+a+' a la Noche de Gala FERREMAX: una sola fuerza (8.° Aniversario).';
+  window.open('https://wa.me/51955476311?text='+encodeURIComponent(t),'_blank');
+});
+</script>
+</body>
+</html>
